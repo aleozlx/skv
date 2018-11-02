@@ -1,3 +1,16 @@
-fn main() {
-    println!("Hello, world!");
+// sudo setcap CAP_NET_BIND_SERVICE=+eip target/debug/skv
+
+#![feature(proc_macro_hygiene, decl_macro)]
+
+#[macro_use] extern crate rocket;
+
+#[get("/")]
+fn index() -> &'static str {
+    "Hello, world!"
 }
+
+fn main() {
+    rocket::ignite().mount("/", routes![index]).launch();
+}
+
+

@@ -4,3 +4,5 @@ version = "0.1.0"
 authors = ["aleozlx"]
 
 [dependencies]
+rocket = { version = "0.4.0-rc.1", features = ["tls"] }
+
